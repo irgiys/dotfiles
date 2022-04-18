@@ -1,0 +1,55 @@
+# Inserts a blank line between shell prompts
+add_newline = true
+command_timeout = 5000
+# Replace the "❯" symbol in the prompt with "➜"
+[character] # The name of the module we are configuring is "character"
+success_symbol = "[➜](bold green)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[➜](bold red)"
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+[git_branch]
+symbol = " "
+style = "bold #D14FAE"
+truncation_length = 4
+truncation_symbol = ""
+format = "[on](fg:255) [$symbol$branch]($style)"
+
+[git_commit]
+style = "#33658A"
+format = "\b[ ⚬ $hash$tag](fg:255)"
+
+[git_state]
+style = "#33658A"
+rebase = "REBASING"
+merge = "MERGING"
+revert = "REVERTING"
+cherry_pick = "CHERRY-PICKING"
+bisect = "BISECTING"
+am = "AM"
+am_or_rebase = "AM/REBASE"
+format = "\b[ \\($state( $progress_current/$progress_total)\\)](fg:#EB8A90)"
+
+[git_status]
+style = "#33658A"
+conflicted = "${count} "
+stashed = "${count} "
+deleted = "${count}✘ "
+renamed = "${count}﫦 "
+modified = "${count}↺ "
+staged = "${count} "
+untracked = "${count} "
+disabled = false
+format = '[ $conflicted](bold fg:255)[$stashed](bold fg:#7CF0BD bg:$style)[$deleted](bold fg:#EB8A90)[$renamed](bold fg:#957FEF)[$modified](bold fg:#E4CC37)[$staged](bold fg:#7CF0BD)[$untracked](bold fg:cyan)'
+
+[nodejs]
+style = "#72D953"
+symbol = "⬢ "
+format = "[via ](fg:255)[$symbol$version ](bold  fg:$style)"
+
+[python]
+style = "bold #A7C832"
+symbol = " "
+# pyenv_version_name = true
