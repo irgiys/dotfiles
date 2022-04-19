@@ -1,6 +1,6 @@
 # My personal dotfiles
 
-Nothing fancy ui here, Just bit installing and configuring some stuff
+Nothing fancy ui here, just install and configure some stuff
 
 ## About my setup :
 
@@ -22,11 +22,7 @@ Installing stuff :
    sudo pacman -Syu alacritty fish starship peco exa
    ```
 
-2. Install fisher for fish plugin manager
-   ```bash
-   curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-   ```
-3. Install needed fonts
+2. Install needed fonts
    You will need to install a few fonts (mainly icon fonts) in order for text and icons to be rendered properly
 
    -  **FiraCode** - [here](https://www.nerdfonts.com/)
@@ -37,12 +33,18 @@ Installing stuff :
    fc-cache -v
    ```
 
-4. Install z jumping directory
+3. Install fisher for fish plugin manager (you need to change your shell to fish just type `fish`)
+
+   ```bash
+   curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+   ```
+
+4. Install z jumping directory (optional)
    ```bash
    fisher install jethrokuan/z
    ```
 
-Allright once you've done installing those stuff, you've to configure some stuff
+Allright once you've done installing those stuff, you've to configure some stuff :
 
 1. Clone this repos
    ```bash
@@ -53,5 +55,21 @@ Allright once you've done installing those stuff, you've to configure some stuff
    ```bash
    cp -r config/* ~/.config/
    ```
+3. Change your default shell to fish
+   ```bash
+   echo /usr/local/bin/fish | sudo tee -a \etc\shells
+   ```
+   then
+   ```bash
+   chsh -s /usr/local/bin/fish
+   ```
+   or
+   ```bash
+   chsh -s /usr/bin/fish
+   ```
+   just navigate to
+   ```bash
+   cat /etc/shells
+   ```
 
-Thanks for coming, hope this works <3
+Hope this works <3
